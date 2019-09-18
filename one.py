@@ -1,5 +1,5 @@
 import cv2 
-import numpy as np 
+import matplotlib.pyplot as plt
 
 from keras.models import Sequential
 from keras.layers import Conv2D
@@ -29,8 +29,16 @@ test_datagen = ImageDataGenerator(rescale=1./255)
 
 
 training_set = train_datagen.flow_from_directory('C:/Users/Anil Nautiyal/Downloads/v_data/train', target_size=(64, 64),batch_size=32,class_mode='binary')
-
+ep =20
 test_set = test_datagen.flow_from_directory('C:/Users/Anil Nautiyal/Downloads/v_data/test',target_size=(64, 64),batch_size=32,class_mode='binary')
 
-model.fit_generator(training_set, steps_per_epoch=25, epochs=20,validation_data=test_set, validation_steps=150)
+hist = model.fit_generator(training_set, steps_per_epoch=25, epochs=ep,validation_data=test_set, validation_steps=150)
+val_acc = hist.history['val_acc']
+acc= hist.history['acc']
+x= list(range(1,ep+1))
 
+plt.plot(x,acc,marker='o',label = 'acc')
+plt.plot(x,val_acc,marker='o',label = 'val_acc')
+
+plt.legend()
+plt.show()
