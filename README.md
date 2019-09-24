@@ -9,6 +9,8 @@ Using this script I was able to achieve a validation accuracy of above 85% consi
 From looking at the graph we can easily conclude that training the model for more number of epochs will result in better accuracy.
 As the number of epochs will increase, the accuracy will continue to increase. But the validation accuracy will increase till a particular epoch and then start decreasing because the model will start overfitting after that.
 
-For now, from the plot we can say that increasing the number of epochs will help.
+Some parameter were changed like:
+1. Batch Size
+2. Number of Epochs
 
-In the next update I intend to find the exact epoch after which this happens
+Also added a test set to actually verify if the model was working and results have been updated
