@@ -1,5 +1,5 @@
 # Binary-Classifier
-It is a binary classifier which works on keras module in python
+First attempt at an image classifier. It is a binary classifier which works on keras module in python
 
 This script uses data from https://drive.google.com/file/d/1dbcWabr3Xrr4JvuG0VxTiweGzHn-YYvW/view 
 The Zip file consists of images of cars and planes. They have been separated into 2 folders of training and test. Further, they have been labeled as 'cars' and 'planes'.
